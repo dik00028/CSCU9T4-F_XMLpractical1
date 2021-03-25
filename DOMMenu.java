@@ -11,11 +11,10 @@ import javax.xml.transform.*;       // import DOM source classes
 import org.w3c.dom.*;               // import DOM
 
 /**
-  DOM handler to read XML information, to create this, and to print it.
-
-  @author   CSCU9T4, University of Stirling
-  @version  11/03/20
-*/
+ DOM handler to read XML information, to create this, and to print it.
+ @author   CSCU9T4, University of Stirling
+ @version  11/03/20
+ */
 public class DOMMenu {
 
   /** Document builder */
@@ -33,24 +32,22 @@ public class DOMMenu {
   /*----------------------------- General Methods ----------------------------*/
 
   /**
-    Main program to call DOM parser.
-
-    @param args         command-line arguments
-  */
+   Main program to call DOM parser.
+   @param args         command-line arguments
+   */
   public static void main(String[] args)  {
     // load XML file into "document"
     loadDocument(args[0]);
     // print staff.xml using DOM methods and XPath queries
     printNodes();
-  
-   
+
+
   }
 
   /**
-    Set global document by reading the given file.
-
-    @param filename     XML file to read
-  */
+   Set global document by reading the given file.
+   @param filename     XML file to read
+   */
   private static void loadDocument(String filename) {
     try {
       // create a document builder
@@ -73,7 +70,7 @@ public class DOMMenu {
   /**
    Validate the document given a schema file
    @param filename XSD file to read
-  */
+   */
   private static Boolean validateDocument(String filename)  {
     try {
       String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
@@ -89,8 +86,8 @@ public class DOMMenu {
     }
   }
   /**
-    Print nodes using DOM methods and XPath queries.
-  */
+   Print nodes using DOM methods and XPath queries.
+   */
   private static void printNodes() {
     Node menuItem_1 = document.getFirstChild();
     Node menuItem_2 = menuItem_1.getFirstChild().getNextSibling();
@@ -100,11 +97,10 @@ public class DOMMenu {
   }
 
   /**
-    Get result of XPath query.
-
-    @param query        XPath query
-    @return         result of query
-  */
+   Get result of XPath query.
+   @param query        XPath query
+   @return         result of query
+   */
   private static String query(String query) {
     String result = "";
     try {
