@@ -92,12 +92,9 @@ public class SAXMenu {
             validator.validate(source);
             return true;// return true to parse the xml because there are no errors
 
-        } catch (SAXException saxException) {
-            System.err.println(saxException.getMessage());
+        } catch (SAXException | IOException exception) {
+            System.err.println(exception.getMessage());
             return false;  // return false if there is an exception
-        }catch ( IOException ioException){
-            System.err.println(ioException.getMessage());
-            return false;
         }
 
 
